@@ -22,9 +22,9 @@ export default defineConfig({
     ),
   },
   build: {
-    // Build straight into the Python package so the frontend ships inside
-    // the wheel (see [tool.hatch.build] artifacts in pyproject.toml).
-    outDir: "../muscriptor/web_dist",
+    // On Vercel output to web/dist (the outputDirectory in vercel.json).
+    // Locally, build into the Python package for the wheel.
+    outDir: process.env.VERCEL ? "dist" : "../muscriptor/web_dist",
     emptyOutDir: true,
   },
 });

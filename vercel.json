@@ -1,0 +1,16 @@
+{
+  "buildCommand": "cd web && npm ci && npm run build",
+  "outputDirectory": "web/dist",
+  "installCommand": "echo skip",
+  "framework": null,
+  "rewrites": [
+    { "source": "/transcribe/(.*)", "destination": "https://muscriptor.kyutai.org/transcribe/$1" },
+    { "source": "/transcribe", "destination": "https://muscriptor.kyutai.org/transcribe" },
+    { "source": "/instruments", "destination": "https://muscriptor.kyutai.org/instruments" },
+    { "source": "/auralize", "destination": "https://muscriptor.kyutai.org/auralize" },
+    { "source": "/health", "destination": "https://muscriptor.kyutai.org/health" },
+    { "source": "/soundfonts/(.*)", "destination": "https://muscriptor.kyutai.org/soundfonts/$1" },
+    { "source": "/soundfonts", "destination": "https://muscriptor.kyutai.org/soundfonts" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
+  ]
+}
